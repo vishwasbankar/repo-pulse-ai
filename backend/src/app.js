@@ -15,9 +15,10 @@ app.use('/api', apiRoutes);
 
 app.use((error, request, response, next) => {
   console.error(error);
-  response.status(500).json({
+  return response.status(500).json({
     success: false,
-    message: 'Internal server error'
+    message: 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? error.message : undefined
   });
 });
 
