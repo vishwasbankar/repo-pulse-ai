@@ -50,7 +50,7 @@ RepoPulse AI analyzes GitHub repositories and evaluates:
 | Kashish      | GitHub + Repository Scanner             |
 | Madhur       | Database + Code Quality/Security        |
 | Tejshri      | Frontend + Testing/Prediction           |
-| AI/ML Member | AI/ML + Requirement Matching + AI Judge |
+| Mayur        | AI/ML + Requirement Matching + AI Judge |
 
 ## Development
 
