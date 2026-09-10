@@ -1,17 +1,40 @@
-const analyzeRepository = (request, response) => {
-  const { repositoryUrl } = request.body;
+const Analysis = require('../models/analysis.model');
 
-  if (!repositoryUrl) {
-    return response.status(400).json({
+const analyzeRepository = async (request, response) => {
+  try {
+    const { repositoryUrl } = request.body;
+
+    if (!repositoryUrl) {
+      return response.status(400).json({
+        success: false,
+        message: 'repositoryUrl is required'
+      });
+    }
+
+    const repositoryName = repositoryUrl
+      .split('/')
+      .filter(Boolean)
+      .pop();
+
+    const analysis = await Analysis.create({
+      repositoryUrl,
+      repositoryName,
+      status: 'pending'
+    });
+
+    return response.status(201).json({
+      success: true,
+      message: 'Analysis request created',
+      data: analysis
+    });
+  } catch (error) {
+    console.error('Analysis controller error:', error.message);
+
+    return response.status(500).json({
       success: false,
-      message: 'repositoryUrl is required'
+      message: 'Failed to create analysis request'
     });
   }
-  // TODO: Implement actual repository analysis
-  return response.status(501).json({
-    success: false,
-    message: 'Repository analysis is not implemented yet'
-  });
 };
 
 module.exports = { analyzeRepository };
