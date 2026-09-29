@@ -1,0 +1,59 @@
+{
+  "repository": {
+    "name": "taskflow",
+    "url": "https://github.com/example-team/taskflow",
+    "description": "A lightweight Kanban board for small teams, built during the hackathon.",
+    "primaryLanguage": "JavaScript",
+    "languages": { "JavaScript": 68.2, "CSS": 19.4, "HTML": 12.4 },
+    "topics": ["kanban", "productivity", "react"],
+    "license": "MIT"
+  },
+  "team": {
+    "contributors": [
+      { "username": "alex-dev", "commitCount": 34 },
+      { "username": "priya-codes", "commitCount": 21 }
+    ],
+    "totalCommits": 55,
+    "firstCommitAt": "2026-09-10T09:15:00Z",
+    "lastCommitAt": "2026-09-14T22:40:00Z"
+  },
+  "documentation": {
+    "hasReadme": true,
+    "readmeSummary": "Explains the problem (scattered team to-dos), setup steps, and a link to a hosted demo.",
+    "hasSetupInstructions": true,
+    "hasDemoLink": true,
+    "demoUrl": "https://taskflow-demo.example.com"
+  },
+  "techStack": {
+    "frameworks": ["React", "Express"],
+    "dependencies": ["react", "express", "mongoose", "jsonwebtoken"],
+    "hasTests": true,
+    "hasCI": true
+  },
+  "evidence": [
+    {
+      "id": "ev_01",
+      "type": "readme",
+      "source": "README.md",
+      "claim": "README states the problem statement and includes setup instructions."
+    },
+    {
+      "id": "ev_02",
+      "type": "test",
+      "source": "backend/src/tests/board.test.js",
+      "claim": "Repository contains automated tests for the board creation flow."
+    },
+    {
+      "id": "ev_03",
+      "type": "ci",
+      "source": ".github/workflows/ci.yml",
+      "claim": "A GitHub Actions workflow runs on every push to main."
+    },
+    {
+      "id": "ev_04",
+      "type": "commit",
+      "source": "55 commits between 2026-09-10 and 2026-09-14",
+      "claim": "Commit history shows steady activity across the full hackathon window."
+    }
+  ]
+}
